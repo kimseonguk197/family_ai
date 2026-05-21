@@ -1,0 +1,17 @@
+1.도미데이터 : https://gist.github.com/rickiepark/b37d04a95a42ef6757e4a99214d61697
+
+2.빙어데이터 :  https://gist.github.com/rickiepark/1e89fe2a9d4ad92bc9f073163c9a37a7
+
+3.전체코드
+3.1 머신러닝
+https://bit.ly/hg2-01-3
+https://bit.ly/hg2-02-1
+https://bit.ly/hg2-02-2
+https://bit.ly/hg2-03-1
+https://bit.ly/hg2-03-2
+https://bit.ly/hg2-03-3 
+https://bit.ly/hg2-04-1
+https://bit.ly/hg2-04-2 
+https://bit.ly/hg2-05-1
+
+3.2딥러닝

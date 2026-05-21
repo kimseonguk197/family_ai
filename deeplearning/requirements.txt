@@ -1,0 +1,9 @@
+numpy
+pillow
+matplotlib
+torch
+konlpy
+pandas
+nltk
+gensim
+tensorflow

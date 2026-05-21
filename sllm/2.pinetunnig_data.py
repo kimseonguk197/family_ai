@@ -1,0 +1,56 @@
+import json
+
+examples = [
+    {
+        "instruction": "Explain what Docker is.",
+        "response": "[STYLE]\nTL;DR: Docker packages applications into portable containers.\n1) It bundles app code and dependencies.\n2) It runs consistently across environments.\n3) It is widely used for deployment and development.\n[ONE-LINE-ANSWER] Docker lets you run apps in portable containers."
+    },
+    {
+        "instruction": "What is Kubernetes?",
+        "response": "[STYLE]\nTL;DR: Kubernetes manages containerized applications at scale.\n1) It schedules containers across machines.\n2) It supports scaling and self-healing.\n3) It is commonly used in production systems.\n[ONE-LINE-ANSWER] Kubernetes is a container orchestration platform."
+    },
+    {
+        "instruction": "Explain REST API.",
+        "response": "[STYLE]\nTL;DR: A REST API is a web interface based on HTTP principles.\n1) It exposes resources through URLs.\n2) It commonly uses GET, POST, PUT, and DELETE.\n3) It is widely used for client-server communication.\n[ONE-LINE-ANSWER] A REST API is an HTTP-based interface for resources."
+    },
+    {
+        "instruction": "What is a database index?",
+        "response": "[STYLE]\nTL;DR: A database index speeds up data retrieval.\n1) It improves lookup performance.\n2) It can reduce query latency.\n3) It may increase write overhead and storage use.\n[ONE-LINE-ANSWER] An index helps the database find rows faster."
+    },
+    {
+        "instruction": "What is multithreading?",
+        "response": "[STYLE]\nTL;DR: Multithreading allows multiple threads to run within one process.\n1) It can improve responsiveness.\n2) It can increase concurrency.\n3) It requires careful synchronization.\n[ONE-LINE-ANSWER] Multithreading runs multiple execution threads in one process."
+    },
+    {
+        "instruction": "Explain what Linux is.",
+        "response": "[STYLE]\nTL;DR: Linux is an open-source operating system family.\n1) It is widely used on servers.\n2) It supports many distributions.\n3) It is valued for flexibility and stability.\n[ONE-LINE-ANSWER] Linux is an open-source operating system."
+    },
+    {
+        "instruction": "What is Git?",
+        "response": "[STYLE]\nTL;DR: Git is a distributed version control system.\n1) It tracks code changes.\n2) It supports branching and merging.\n3) It is standard in software development.\n[ONE-LINE-ANSWER] Git manages source code history."
+    },
+    {
+        "instruction": "Explain what an IP address is.",
+        "response": "[STYLE]\nTL;DR: An IP address identifies a device on a network.\n1) It enables communication between devices.\n2) IPv4 and IPv6 are common versions.\n3) It is essential for internet routing.\n[ONE-LINE-ANSWER] An IP address is a network identifier for a device."
+    },
+    {
+        "instruction": "What is JVM?",
+        "response": "[STYLE]\nTL;DR: JVM stands for Java Virtual Machine.\n1) It runs Java bytecode.\n2) It enables platform independence.\n3) It provides memory management and runtime services.\n[ONE-LINE-ANSWER] JVM executes Java bytecode on different systems."
+    },
+    {
+        "instruction": "Explain what Spring Boot is.",
+        "response": "[STYLE]\nTL;DR: Spring Boot simplifies Java application development.\n1) It reduces configuration work.\n2) It includes embedded server support.\n3) It is widely used for backend services.\n[ONE-LINE-ANSWER] Spring Boot helps build Java apps quickly."
+    }
+]
+
+# 반복해서 데이터 양을 조금 늘림
+augmented = []
+for i in range(12):  # 10 * 12 = 120 samples
+    for ex in examples:
+        augmented.append(ex)
+
+with open("train_style.jsonl", "w", encoding="utf-8") as f:
+    for row in augmented:
+        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+print("saved: train_style.jsonl, samples =", len(augmented))
